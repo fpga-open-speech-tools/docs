@@ -2250,7 +2250,7 @@ hr {
 }
 
 .servic-padding {
-  padding-top: 200px;
+  padding-top: 0px;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
   .servic-padding {
@@ -5448,7 +5448,7 @@ del {
 }
 
 .slider-height {
-  min-height: 850px;
+  min-height: 0px;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -5884,7 +5884,7 @@ form.search-box .search-form a {
   transition: 0.4s;
 }
 .our-services .single-services:hover {
-  box-shadow: 0px 10px 30px 0px rgba(133, 66, 189, 0.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 .our-services .single-services .services-ion {
   height: 92px span;
@@ -6617,6 +6617,13 @@ form.search-box .search-form a {
   color: #fff;
   font-size: 50px;
   font-weight: 700;
+}
+
+#autogen-overview {
+  width: calc(61vh*1.77);
+  height: calc(61vh + 70px);
+  padding-top: 35px;
+  padding-bottom: 35px;
 }
 
 /*# sourceMappingURL=style.css.map */

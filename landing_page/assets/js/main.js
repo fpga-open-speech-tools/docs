@@ -9,6 +9,9 @@
     //   });
     // });
 
+  var v = document.getElementById('autogen-overview');
+  v.addEventListener('mouseover', function() { this.controls = true; }, false);
+  v.addEventListener('mouseout', function() { this.controls = false; }, false);
 
 /* 2. slick Nav */
 // mobile_menu
