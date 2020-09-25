@@ -41,6 +41,11 @@ or
 
 ## AWS CLI
  1. Install the [AWS CLI V2](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-windows.html) for Windows 
+ 2. In Powershell, run `aws configure`
+    - AWS Access Key ID: provided
+    - AWS Secret Access Key: provided
+    - Default Region: us-west-2
+    - Default Output Format: JSON
 
 # Configuring the DE10
 
