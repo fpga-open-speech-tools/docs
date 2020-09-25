@@ -47,6 +47,16 @@ or
     - Default Region: us-west-2
     - Default Output Format: JSON
 
+## Generating an Example Design
+ 1. Open MATLAB
+ 2. Navigate to `[NIH Repos]\simulink_models\config`
+ 3. Run `pathSetup.m`
+ 4. Open an example model, in this case, `[NIH Repos]\simulink_models\models\simple_gain_vector\vector_gain.slx`
+ 5. Click the Run Simulation Button (Green Play Icon) in the toolbar 
+ 6. Change the dropdown left of the Run Simulation button from "Accelerator" to "Normal"
+ 7. Click the Green Generate VHDL Button in the bottom left of the top level design
+ 8. Once complete, run `s3upload(mp,"nih-demos","audiomini/[project_name]",true)` in the MATLAB Command Window
+
 # Configuring the DE10
 
 # Deploying Design to SoC FPGA through Web App
