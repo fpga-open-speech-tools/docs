@@ -10,10 +10,10 @@ sudo apt install libncurses-dev -y;
 sudo apt install libssl-dev -y;
 
 # Install the Device Tree Compiler
-./docs/dtc_installer.sh # This will fail to build a Python 2 package but that doesn't matter
+./docs/scripts/dtc_installer.sh # This will fail to build a Python 2 package but that doesn't matter
 
 # Clone the FrOST Repos
-./docs/clone_Frost_Repos.sh
+./docs/scripts/clone_Frost_Repos.sh
 
 # Clone and Configure Linux-SOCFPGA
 cd ~; echo "Moving to Home Directory of WSL."
