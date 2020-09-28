@@ -1,5 +1,3 @@
-#!/bin/sh -e
-
 DIR="$PWD"
 
 check_dpkg () {

@@ -1,5 +1,3 @@
-#!/bin/sh -e
-
 # Install WSL Packages
 echo "Updating and Installing Packages..."
 sudo apt update;
@@ -18,7 +16,7 @@ echo "Cloning the FrOST Git Repos."
 
 # Clone and Configure Linux-SOCFPGA
 cd ~; echo "Moving to Home Directory of WSL."
-git clone https://github.com/fpga-open-speech-tools/linux-socfpga.git;
+#git clone https://github.com/fpga-open-speech-tools/linux-socfpga.git;
 cd linux-socfpga;
 echo "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- openspeech_defconfig"
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- openspeech_defconfig;
