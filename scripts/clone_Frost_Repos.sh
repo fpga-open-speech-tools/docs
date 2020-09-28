@@ -1,3 +1,4 @@
+#!/bin/bash
 git clone https://github.com/fpga-open-speech-tools/simulink_models.git
 git clone https://github.com/fpga-open-speech-tools/fpga-open-speech-tools.github.io.git
 git clone https://github.com/fpga-open-speech-tools/utils.git
