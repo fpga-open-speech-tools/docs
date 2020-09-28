@@ -4,13 +4,13 @@
 1. [MATLAB](https://www.mathworks.com/downloads/) - Required  
 2. Simulink                  - Required
 3. Toolboxes:  
-    1. HDL Coder                 - Required  
-    2. DSP System Toolbox        - Strongly Suggested, Required for Example Designs  
-    3. Fixed-Point Designer      - Strongly Suggested, Required for Example Designs  
-    4. Signal Processing Toolbox - Strongly Suggested, Required for Example Designs  
-    5. HDL Verifier              - Strongly Suggested  
-    6. MATLAB Coder              - Strongly Suggested     
-    7. Simulink Coder            - Strongly Suggested  
+    1. HDL Coder                 - Required   
+    2. MATLAB Coder              - Required     
+    3. Simulink Coder            - Required 
+    4. Fixed-Point Designer      - Required  
+    5. DSP System Toolbox        - Strongly Suggested, Required for Example Designs  
+    6. Signal Processing Toolbox - Strongly Suggested, Required for Example Designs  
+    7. HDL Verifier              - Strongly Suggested  
 
 ### Quartus 
 1. [Standard](https://fpgasoftware.intel.com/20.1/?edition=standard) - Arria 10 for the Audio Blade and Audio Research, Cyclone V for the Audio Mini  
