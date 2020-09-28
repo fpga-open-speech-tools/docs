@@ -24,7 +24,6 @@ or
  1. In WSL, clone the [Docs Repo](https://github.com/fpga-open-speech-tools/docs) into the `[FrOST Repos]` Directory 
     - `git clone https://github.com/fpga-open-speech-tools/docs.git`
  2. From the `[FrOST Repo]` Directory, run `./docs/FrOST_Autogen_Config.sh`
- 3. When the make menuconfig opens, click Save and Exit
 
 ## AWS CLI
  1. Install the [AWS CLI V2](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-windows.html) for Windows 

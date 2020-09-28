@@ -19,9 +19,6 @@ sudo apt install libssl-dev -y;
 cd ~; echo "Moving to Home Directory of WSL."
 git clone https://github.com/fpga-open-speech-tools/linux-socfpga.git;
 cd linux-socfpga;
-# make openspeech_defconfig;
-cp arch/arm/configs/openspeech_defconfig .config;
-echo "make menuconfig ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-";
-make menuconfig ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-;
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- openspeech_defconfig;
 echo "make prepare ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-"
 make prepare ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-;
