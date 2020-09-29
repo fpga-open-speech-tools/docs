@@ -6,7 +6,6 @@ sudo apt install gcc-arm-linux-gnueabihf -y;
 sudo apt install wsl -y;
 sudo apt install dos2unix -y;
 sudo apt install libssl-dev -y;
-sudo apt install dos2unix -y;
 
 # Install the Device Tree Compiler
 echo "Installing the Device Tree Compiler."
