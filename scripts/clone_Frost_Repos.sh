@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 [ ! -d 'simulink_models' ]                  && git clone https://github.com/fpga-open-speech-tools/simulink_models.git
 [ ! -d 'fpga-open-speech-tools.github.io' ] && git clone https://github.com/fpga-open-speech-tools/fpga-open-speech-tools.github.io.git
 [ ! -d 'utils' ]                            && git clone https://github.com/fpga-open-speech-tools/utils.git
