@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Install WSL Packages
 echo "Updating and Installing Packages..."
 sudo apt update;
