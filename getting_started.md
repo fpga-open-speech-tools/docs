@@ -23,8 +23,10 @@ or
 ## Configure the FrOST Autogen Software
  1. In WSL, clone the [Docs Repo](https://github.com/fpga-open-speech-tools/docs) into the `[FrOST Repos]` Directory 
     - `sudo git clone https://github.com/fpga-open-speech-tools/docs.git`
-    - Note: The `Frost_Autogen_Config.sh` script will fail if the Docs repo is cloned using GitHub Desktop on Windows.   
-      GitHub Desktop converts unix EOL characters to dos EOL characters. Use `dos2unix` to convert the file.
+    - Note: The `Frost_Autogen_Config.sh` script will fail if the Docs repo is cloned using GitHub Desktop on Windows. GitHub Desktop converts Unix EOL characters to Dos EOL characters. Use the following steps to convert the Unix EOL Characters to Dos EOL Characters. 
+        - `sudo apt update`
+        - `sudo apt install dos2unix -y`
+        - `sudo dos2unix docs/FrOST_Autogen_Config.sh`
  2. From the `[FrOST Repo]` Directory, run `./docs/Frost_Autogen_Config.sh`
 
 ## AWS CLI
