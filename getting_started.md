@@ -62,13 +62,17 @@ The following steps provide a simple starting point. This is not a complete guid
 6. Change the dropdown left of the Run Simulation button from "Accelerator" to "Normal"
 7. Click the Green Generate VHDL Button in the bottom left of the top level of the design
 8. Once complete, Upload the files to the S3 Bucket created above
-    - Copy the following files to S3
+    - Either create or go into the Frost Hardware Folder - ex. `audiomini`
+    - Create a folder for the project and copy the following files into it
         - model.json
         - `[project].dtbo`
         - `[project].ko`
         - `[project].rbf`
     - Or run `s3upload(mp,"[bucket name]","audiomini/[project_name]",true)` in the MATLAB Command Window
 
-# Configuring the DE10
-
 # Deploying Design to SoC FPGA through Web App
+1. Connect to the Frost Hardware by navigating to `[ip address]:5000`  
+2. Enter the bucket name that was created in AWS S3 Bucket - Step 2 and click `Update`  
+3. Under device, select the correct Frost Hardware  
+4. Under the project folder, click the download icon  
+5. Once downloaded and installed, the project controls will be available  
