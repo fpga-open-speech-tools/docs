@@ -33,11 +33,23 @@ or
         - `sudo dos2unix docs/FrOST_Autogen_Config.sh`
 2. From the `[FrOST Repo]` Directory, run `./docs/Frost_Autogen_Config.sh`
 
-## AWS CLI
-1. Install the [AWS CLI V2](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-windows.html) for Windows 
-2. In Powershell, run `aws configure`
-    - AWS Access Key ID: provided
-    - AWS Secret Access Key: provided
+## AWS S3 Bucket and the CLI
+1. Create an AWS Account and Log In
+2. Create an [S3 Bucket](https://github.com/fpga-open-speech-tools/utils/tree/dev/s3) using the Frost CloudFormation Template
+
+**Optional - Creating an IAM User to upload programming file via the AWS CLI** 
+The following steps provide a simple starting point. This is not a complete guide on configuring an IAM user or security.
+3. Create an IAM User
+    - Go to `IAM` by searching the AWS Services
+    - Under IAM Resources, click on `Users`
+    - Click `Add User`
+    - Enter a user name
+    - Under AWS Access Type, select `Programmatic Access`
+    - Configure user permissions
+4. Install the [AWS CLI V2](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-windows.html) for Windows 
+5. In Powershell, run `aws configure`
+    - AWS Access Key ID: created in step 2
+    - AWS Secret Access Key: created in step 2
     - Default Region: us-west-2
     - Default Output Format: JSON
 
@@ -49,7 +61,13 @@ or
 5. Click the Run Simulation Button (Green Play Icon) in the toolbar 
 6. Change the dropdown left of the Run Simulation button from "Accelerator" to "Normal"
 7. Click the Green Generate VHDL Button in the bottom left of the top level of the design
-8. Once complete, run `s3upload(mp,"nih-demos","audiomini/[project_name]",true)` in the MATLAB Command Window
+8. Once complete, Upload the files to the S3 Bucket created above
+    - Copy the following files to S3
+        - model.json
+        - `[project].dtbo`
+        - `[project].ko`
+        - `[project].rbf`
+    - Or run `s3upload(mp,"[bucket name]","audiomini/[project_name]",true)` in the MATLAB Command Window
 
 # Configuring the DE10
 
