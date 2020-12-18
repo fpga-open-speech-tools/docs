@@ -4,6 +4,7 @@ echo "Updating and Installing Packages..."
 sudo apt update;
 sudo apt install gcc-arm-linux-gnueabihf -y;
 sudo apt install wsl -y;
+sudo apt install make -y;
 sudo apt install dos2unix -y;
 sudo apt install libssl-dev -y;
 
