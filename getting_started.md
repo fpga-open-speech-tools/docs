@@ -38,8 +38,8 @@ or
 
 ## AWS S3 Bucket and the CLI
 1. Create an [Amazon Web Services](console.aws.amazon.com) Account and Log In  
-    - FrOST Autogen and FrOST only use features on the [AWS Free Tier](https://aws.amazon.com/free/), which is available for one year.  
-    - A credit card is required to verify identity. AudioLogic is not responsible for any charges or other account issues.  
+    - FrOST Autogen and FrOST Edge only use features on the [AWS Free Tier](https://aws.amazon.com/free/), which is available for one year.  
+    - A credit card is required to verify identity. AudioLogic is not liable for any charges or other account issues.  
 2. Create an [S3 Bucket](https://github.com/fpga-open-speech-tools/utils/tree/dev/s3) using the FrOST CloudFormation Template
 
 **Optional - Creating an IAM User to upload programming file via the AWS CLI**   
