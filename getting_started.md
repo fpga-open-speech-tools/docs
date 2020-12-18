@@ -24,14 +24,17 @@ or
 1. In windows command prompt, run `python --version`
 2. Install Python 3.8 from the Microsoft Store
 
-## Configure the FrOST Autogen Software
-1. In WSL, clone the [Docs Repo](https://github.com/fpga-open-speech-tools/docs) into the `[FrOST Repos]` Directory 
+## Configure the Frost Autogen Software
+1. Create a new folder to store all of the Frost Repos. This folder will be refered to as the `[Frost Repos]` Directory in the rest of this guide.
+2. In WSL:  
+  i. Navigate to the newly created `[Frost Repos]` Directory   
+  ii. Clone the [Docs Repo](https://github.com/fpga-open-speech-tools/docs) into the `[Frost Repos]` Directory 
     - `sudo git clone https://github.com/fpga-open-speech-tools/docs.git`
     - Note: The `Frost_Autogen_Config.sh` script will fail if the Docs repo is cloned using GitHub Desktop on Windows. GitHub Desktop converts Unix EOL characters to Dos EOL characters. Use the following steps to convert the Unix EOL Characters to Dos EOL Characters. 
         - `sudo apt update`
         - `sudo apt install dos2unix -y`
         - `sudo dos2unix docs/FrOST_Autogen_Config.sh`
-2. From the `[FrOST Repo]` Directory, run `./docs/Frost_Autogen_Config.sh`
+3. From the `[FrOST Repo]` Directory, run `./docs/Frost_Autogen_Config.sh`
 
 ## AWS S3 Bucket and the CLI
 1. Create an AWS Account and Log In
@@ -55,9 +58,9 @@ The following steps provide a simple starting point. This is not a complete guid
 
 ## Generating an Example Design
 1. Open MATLAB
-2. Navigate to `[FrOST Repos]\simulink_models\config`
+2. Navigate to `[Frost Repos]\simulink_models\config`
 3. Run `pathSetup.m` - This has to be run every time MATLAB is opened.
-4. Open an example model, in this case, `[FrOST Repos]\simulink_models\models\simple_gain_vector\vector_gain.slx`
+4. Open an example model, in this case, `[Frost Repos]\simulink_models\models\simple_gain_vector\vector_gain.slx`
 5. Click the Run Simulation Button (Green Play Icon) in the toolbar 
 6. Change the dropdown left of the Run Simulation button from "Accelerator" to "Normal"
 7. Click the Green Generate VHDL Button in the bottom left of the top level of the design
