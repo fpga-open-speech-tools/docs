@@ -28,7 +28,7 @@ or
 1. Create a new folder to store all of the FrOST Repos. This folder will be refered to as the `[FrOST Repos]` Directory in the rest of this guide.
 2. In WSL:  
   i. Navigate to the newly created `[FrOST Repos]` Directory   
-  ii. Clone the [Docs Repo](https://github.com/fpga-open-speech-tools/docs) into the `[FrOST Repos]` Directory 
+  ii. Clone the [Docs Repo](https://github.com/fpga-open-speech-tools/docs) into the `[FrOST Repos]` Directory. Note this will take approximately 30 minutes and requires at least 2GB of free hard drive space.
     - `git clone https://github.com/fpga-open-speech-tools/docs.git`
     - Note: The `FrOST_Autogen_Config.sh` script will fail if the Docs repo is cloned using GitHub Desktop on Windows. GitHub Desktop converts Unix EOL characters to Dos EOL characters. Use the following steps to convert the Unix EOL Characters to Dos EOL Characters. 
         - `sudo apt update`
@@ -37,12 +37,13 @@ or
 3. From the `[FrOST Repo]` Directory, run `./docs/FrOST_Autogen_Config.sh`
 
 ## AWS S3 Bucket and the CLI
-1. Create an AWS Account and Log In
+1. Create an [Amazon Web Services](console.aws.amazon.com) Account and Log In
 2. Create an [S3 Bucket](https://github.com/fpga-open-speech-tools/utils/tree/dev/s3) using the FrOST CloudFormation Template
 
 **Optional - Creating an IAM User to upload programming file via the AWS CLI**   
+The IAM User is a convenient way to automate the uploading of artifacts to S3 using the [AWS Command Line Interface](https://aws.amazon.com/cli/). It is not required to use the S3 Bucket with FrOST Edge.
 The following steps provide a simple starting point. This is not a complete guide on configuring an IAM user or security.  
-3. Create an IAM User  
+3. [Create an IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html)  
     - Go to `IAM` by searching the AWS Services  
     - Under IAM Resources, click on `Users`  
     - Click `Add User`  
