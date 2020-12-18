@@ -18,7 +18,7 @@ or
 2. [Lite](https://fpgasoftware.intel.com/20.1/?edition=lite&platform=windows) - Cyclone V for the Audio Mini
 
 ### Windows Subsystem for Linux
-1. Install [WLS](https://docs.microsoft.com/en-us/windows/wsl/install-win10) with Ubuntu 18.04 LTS or newer 
+1. Install [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) with Ubuntu 18.04 LTS or newer 
 
 ### Python 3.8.X
 1. In windows command prompt, run `python --version`
