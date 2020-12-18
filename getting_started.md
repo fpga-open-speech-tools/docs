@@ -29,11 +29,11 @@ or
 2. In WSL:  
   i. Navigate to the newly created `[FrOST Repos]` Directory   
   ii. Clone the [Docs Repo](https://github.com/fpga-open-speech-tools/docs) into the `[FrOST Repos]` Directory 
-    - `sudo git clone https://github.com/fpga-open-speech-tools/docs.git`
+    - `git clone https://github.com/fpga-open-speech-tools/docs.git`
     - Note: The `FrOST_Autogen_Config.sh` script will fail if the Docs repo is cloned using GitHub Desktop on Windows. GitHub Desktop converts Unix EOL characters to Dos EOL characters. Use the following steps to convert the Unix EOL Characters to Dos EOL Characters. 
         - `sudo apt update`
         - `sudo apt install dos2unix -y`
-        - `sudo dos2unix docs/FrOST_Autogen_Config.sh`
+        - `dos2unix docs/FrOST_Autogen_Config.sh`
 3. From the `[FrOST Repo]` Directory, run `./docs/FrOST_Autogen_Config.sh`
 
 ## AWS S3 Bucket and the CLI
