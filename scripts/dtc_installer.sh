@@ -34,7 +34,7 @@ dtc_git_build () {
 	make clean
 	make PREFIX=/usr/local/ CC=gcc CROSS_COMPILE= all NO_PYTHON=1
 	echo "Installing into: /usr/local/bin/"
-	sudo make PREFIX=/usr/local/ install
+	sudo make PREFIX=/usr/local/ install NO_PYTHON=1
 	sudo ln -sf /usr/local/bin/dtc /usr/bin/dtc
 	echo "dtc: `/usr/bin/dtc --version`"
 }
