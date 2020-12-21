@@ -67,16 +67,25 @@ The following steps provide a simple starting point. This is not a complete guid
 5. Click the Run Simulation Button (Green Play Icon) in the toolbar 
 6. Change the dropdown left of the Run Simulation button from "Accelerator" to "Normal"
 7. Click the Green Generate VHDL Button in the bottom left of the top level of the design
-8. Once complete, Upload the files to the S3 Bucket created above
+8. Once complete, Upload the files to the S3 Bucket created in *AWS S3 Bucket and the CLI*
     - Either create or go into the FrOST Hardware Folder - ex. `audiomini`
     - Create a folder for the project and copy the following files into it
-        - model.json
-        - `[project].dtbo`
-        - `[project].ko`
-        - `[project].rbf`
+        - `[project_folder]\model.json`
+        - `[project_folder]\hdlsrc\[project_name]\[project_name]_[target].dtbo`
+        - `[project_folder]\hdlsrc\[project_name]\[project_name].ko`
+        - `[project_folder]\hdlsrc\[project_name]\quartus\output_files\[project_name]_[target].rbf`
+    - As an example for the Simple Vector Gain:
+        - `[FrOST Repos]\simulink_models\models\simple_gain_vector\model.json`
+        - `[FrOST Repos]\simulink_models\models\simple_gain_vector\hdlsrc\vector_gain\vector_gain_audio_mini.dtbo`
+        - `[FrOST Repos]\simulink_models\models\simple_gain_vector\hdlsrc\vector_gain\vector_gain.ko`
+        - `[FrOST Repos]\simulink_models\models\simple_gain_vector\hdlsrc\vector_gain\quartus\output_files\vector_gain_audio_mini.rbf`
     - Or run `s3upload(mp,"[bucket name]","audiomini/[project_name]",true)` in the MATLAB Command Window
 
-# Deploying Design to SoC FPGA through Web App
+# Audio Mini Configuration
+## Updating the Linux Image
+Coming soon...
+
+## Deploying Design to SoC FPGA through Web App
 1. Connect to the FrOST Hardware by navigating to `[ip address]:5000`  
 2. Enter the bucket name that was created in AWS S3 Bucket - Step 2 and click `Update`  
 3. Under device, select the correct FrOST Hardware  
