@@ -83,7 +83,33 @@ The following steps provide a simple starting point. This is not a complete guid
 
 # Audio Mini Configuration
 ## Updating the Linux Image
-Coming soon...
+1. Acquire a uSD Card of at least 16GB
+2. Download the [Audio Mini Linux Image](https://frost-release.s3-us-west-2.amazonaws.com/linux-images/audio-mini-image.zip) from the [FrOST Website](https://fpga-open-speech-tools.github.io/audio_mini.html)  
+3. Unzip the Linux Image  
+    - Note: This takes a few minutes to complete
+4. Download and Install [balenaEtcher](https://www.balena.io/etcher/)  
+5. Launch balenaEtcher and follow the steps to write the Audio Mini Linux Image to the uSD Card 
+    - Note: This takes about 20 minutes to write and validate
+
+## Power the Audio Mini and Finding the IP Address
+1. Download and Install [Putty](https://www.putty.org/)
+2. Insert the uSD Card with the Audio Mini Linux Image into the Audio Mini
+3. Connect the micro-USB UART Cable to the Audio Mini and your PC
+4. Using Device Manager, locate the serial port of the device
+    - In the Windows Search Bar, type `Device Manager`
+    - Open the `Ports (COM & LPT)` Dropdown
+    - Note the COM Number for the USB Serial Port in the List
+5. Launch Putty and Configure the Serial Port Settings for the Audio Mini
+    - Under Basic Options, Select `Serial`
+    - Update the Serial Port Number - This was determined in step 4
+    - Set the speed to `115200`
+    - Click Open
+6. Power the Audio Mini with the provided 12V DC Adapter
+7. In the Putty Terminal, once the Audio Mini is booted, log in with
+    - Username: root
+    - Password: root
+8. In the Putty Terminal, run `ifconfig`
+    - Note the IP Address, it will be used in the next section
 
 ## Deploying Design to SoC FPGA through Web App
 1. Connect to the FrOST Hardware by navigating to `[ip address]:5000`  
