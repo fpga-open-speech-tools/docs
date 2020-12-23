@@ -50,7 +50,9 @@ or
 1. Create an [Amazon Web Services](console.aws.amazon.com) Account and Log In  
     - FrOST Autogen and FrOST Edge only use features on the [AWS Free Tier](https://aws.amazon.com/free/), which is available for one year.  
     - A credit card is required to verify identity. AudioLogic is not liable for any charges or other account issues.  
-2. Create an [S3 Bucket](https://github.com/fpga-open-speech-tools/utils/tree/dev/s3) using the FrOST CloudFormation Template
+2. In the top right corner of the main AWS Console Page, Select the [AWS Region](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html) for your new S3 Bucket
+    - For AudioLogic Inc based in Bozeman MT, US-West-2 Oregon is the closest AWS region
+3. Create an [S3 Bucket](https://github.com/fpga-open-speech-tools/utils/tree/dev/s3) using the FrOST CloudFormation Template
 
 ### Optional - Creating an IAM User to upload programming file via the AWS CLI   
 The IAM User is a convenient way to automate the uploading of artifacts to S3 using the [AWS Command Line Interface](https://aws.amazon.com/cli/). It is not required to use the S3 Bucket with FrOST Edge. The following steps provide a simple starting point. This is not a complete guide on configuring an IAM user or security.  
