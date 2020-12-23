@@ -94,21 +94,22 @@ The following steps provide a simple starting point. This is not a complete guid
 ## Power the Audio Mini and Finding the IP Address
 1. Download and Install [Putty](https://www.putty.org/)
 2. Insert the uSD Card with the Audio Mini Linux Image into the Audio Mini
-3. Connect the micro-USB UART Cable to the Audio Mini and your PC
-4. Using Device Manager, locate the serial port of the device
+3. Connect an Ethernet cable to the DE10-Nano board and to your local switch or router.
+4. Connect the USB Cable from the PC to the DE10-Nano board by plugging it into the UART connector on the DE10-Nano (The UART connector is the female Mini B connector on the right side near the Ethernet connector) 
+5. Using Device Manager, locate the serial port of the device
     - In the Windows Search Bar, type `Device Manager`
-    - Open the `Ports (COM & LPT)` Dropdown
+    - Open the `Ports (COM & LPT)` Dropdown.  If no COM port shows up, you probably have the USB cable plugged into the wrong Mini B port on the DE10-Nano board.
     - Note the COM Number for the USB Serial Port in the List
-5. Launch Putty and Configure the Serial Port Settings for the Audio Mini
+6. Launch Putty and Configure the Serial Port Settings for the Audio Mini
     - Under Basic Options, Select `Serial`
     - Update the Serial Port Number - This was determined in step 4
     - Set the speed to `115200`
     - Click Open
-6. Power the Audio Mini with the provided 12V DC Adapter
-7. In the Putty Terminal, once the Audio Mini is booted, log in with
+7. Power the Audio Mini with the provided 12V DC Adapter
+8. In the Putty Terminal, once the Audio Mini is booted, log in with
     - Username: root
     - Password: root
-8. In the Putty Terminal, run `ifconfig`
+9. In the Putty Terminal, run `ifconfig`
     - Note the IP Address, it will be used in the next section
 
 ## Deploying Design to SoC FPGA through Web App
