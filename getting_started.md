@@ -83,7 +83,7 @@ The IAM User is a convenient way to automate the uploading of artifacts to S3 us
     - `[project_folder]\hdlsrc\[project_name]\[project_name].ko`  
     - `[project_folder]\hdlsrc\[project_name]\quartus\output_files\[project_name]_[target].rbf`  
     
-### Simple Vector Gain Files 
+**Simple Vector Gain Files**  
     - `[FrOST Repos]\simulink_models\models\simple_gain_vector\model.json`  
     - `[FrOST Repos]\simulink_models\models\simple_gain_vector\hdlsrc\vector_gain\vector_gain_audio_mini.dtbo`  
     - `[FrOST Repos]\simulink_models\models\simple_gain_vector\hdlsrc\vector_gain\vector_gain.ko`  
