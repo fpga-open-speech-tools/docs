@@ -36,15 +36,24 @@ or
         - `dos2unix docs/FrOST_Autogen_Config.sh`
 3. From the `[FrOST Repo]` Directory, run `./docs/FrOST_Autogen_Config.sh`
 
+# An Example Design: The Simple Vector Gain
+## Generating an The Simple Vector Gain Model
+1. Open MATLAB
+2. Navigate to `[FrOST Repos]\simulink_models\config`
+3. Run `pathSetup.m` - This has to be run every time MATLAB is opened.
+4. Open an example model, in this case, `[FrOST Repos]\simulink_models\models\simple_gain_vector\vector_gain.slx`
+5. Click the Run Simulation Button (Green Play Icon) in the toolbar 
+6. Change the dropdown left of the Run Simulation button from "Accelerator" to "Normal"
+7. Click the Green Generate VHDL Button in the bottom left of the top level of the design
+
 ## AWS S3 Bucket and the CLI
 1. Create an [Amazon Web Services](console.aws.amazon.com) Account and Log In  
     - FrOST Autogen and FrOST Edge only use features on the [AWS Free Tier](https://aws.amazon.com/free/), which is available for one year.  
     - A credit card is required to verify identity. AudioLogic is not liable for any charges or other account issues.  
 2. Create an [S3 Bucket](https://github.com/fpga-open-speech-tools/utils/tree/dev/s3) using the FrOST CloudFormation Template
 
-**Optional - Creating an IAM User to upload programming file via the AWS CLI**   
-The IAM User is a convenient way to automate the uploading of artifacts to S3 using the [AWS Command Line Interface](https://aws.amazon.com/cli/). It is not required to use the S3 Bucket with FrOST Edge.
-The following steps provide a simple starting point. This is not a complete guide on configuring an IAM user or security.  
+### Optional - Creating an IAM User to upload programming file via the AWS CLI   
+The IAM User is a convenient way to automate the uploading of artifacts to S3 using the [AWS Command Line Interface](https://aws.amazon.com/cli/). It is not required to use the S3 Bucket with FrOST Edge. The following steps provide a simple starting point. This is not a complete guide on configuring an IAM user or security.  
 3. [Create an IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html)  
     - Go to `IAM` by searching the AWS Services  
     - Under IAM Resources, click on `Users`  
@@ -59,27 +68,26 @@ The following steps provide a simple starting point. This is not a complete guid
     - Default Region: us-west-2  
     - Default Output Format: JSON  
 
-## Generating an Example Design
-1. Open MATLAB
-2. Navigate to `[FrOST Repos]\simulink_models\config`
-3. Run `pathSetup.m` - This has to be run every time MATLAB is opened.
-4. Open an example model, in this case, `[FrOST Repos]\simulink_models\models\simple_gain_vector\vector_gain.slx`
-5. Click the Run Simulation Button (Green Play Icon) in the toolbar 
-6. Change the dropdown left of the Run Simulation button from "Accelerator" to "Normal"
-7. Click the Green Generate VHDL Button in the bottom left of the top level of the design
-8. Once complete, Upload the files to the S3 Bucket created in *AWS S3 Bucket and the CLI*
-    - Either create or go into the FrOST Hardware Folder - ex. `audiomini`
-    - Create a folder for the project and copy the following files into it
-        - `[project_folder]\model.json`
-        - `[project_folder]\hdlsrc\[project_name]\[project_name]_[target].dtbo`
-        - `[project_folder]\hdlsrc\[project_name]\[project_name].ko`
-        - `[project_folder]\hdlsrc\[project_name]\quartus\output_files\[project_name]_[target].rbf`
-    - As an example for the Simple Vector Gain:
-        - `[FrOST Repos]\simulink_models\models\simple_gain_vector\model.json`
-        - `[FrOST Repos]\simulink_models\models\simple_gain_vector\hdlsrc\vector_gain\vector_gain_audio_mini.dtbo`
-        - `[FrOST Repos]\simulink_models\models\simple_gain_vector\hdlsrc\vector_gain\vector_gain.ko`
-        - `[FrOST Repos]\simulink_models\models\simple_gain_vector\hdlsrc\vector_gain\quartus\output_files\vector_gain_audio_mini.rbf`
-    - Or run `s3upload(mp,"[bucket name]","audiomini/[project_name]",true)` in the MATLAB Command Window
+## Uploading a Project to S3
+### MATLAB CLI Upload
+1. If you setup an IAM User with the CLI Interface, run `s3upload(mp,"[bucket name]","audiomini/[project_name]",true)` in the MATLAB Command Window.  
+### Manual Upload
+1. Log into the [AWS Console](console.aws.amazon.com)
+2. In the AWS Console search bar, enter `S3` and select `S3` under services
+3. Click on the name of the bucket created above
+4. Either create or go into the FrOST Hardware Folder - ex. `audiomini`
+5. Create a folder for the project and enter it
+6. Either click the `Upload` Button or `Drag and Drop` the following files into the Project Folder created in Step 5  
+    - `[project_folder]\model.json`   
+    - `[project_folder]\hdlsrc\[project_name]\[project_name]_[target].dtbo`  
+    - `[project_folder]\hdlsrc\[project_name]\[project_name].ko`  
+    - `[project_folder]\hdlsrc\[project_name]\quartus\output_files\[project_name]_[target].rbf`  
+    
+### Simple Vector Gain Files 
+    - `[FrOST Repos]\simulink_models\models\simple_gain_vector\model.json`  
+    - `[FrOST Repos]\simulink_models\models\simple_gain_vector\hdlsrc\vector_gain\vector_gain_audio_mini.dtbo`  
+    - `[FrOST Repos]\simulink_models\models\simple_gain_vector\hdlsrc\vector_gain\vector_gain.ko`  
+    - `[FrOST Repos]\simulink_models\models\simple_gain_vector\hdlsrc\vector_gain\quartus\output_files\vector_gain_audio_mini.rbf`  
 
 # Audio Mini Configuration
 ## Updating the Linux Image
@@ -114,7 +122,7 @@ The following steps provide a simple starting point. This is not a complete guid
 
 ## Deploying Design to SoC FPGA through Web App
 1. Connect to the FrOST Hardware by navigating to `[ip address]:5000`  
-2. Enter the bucket name that was created in AWS S3 Bucket - Step 2 and click `Update`  
+2. Enter the bucket name that was created in Step 2 of *AWS S3 Bucket and the CLI* and click `Update`  
 3. Under device, select the correct FrOST Hardware  
 4. Under the project folder, click the download icon  
 5. Once downloaded and installed, the project controls will be available  
