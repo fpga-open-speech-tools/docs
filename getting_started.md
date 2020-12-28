@@ -45,7 +45,7 @@ or
 6. Change the dropdown left of the Run Simulation button from "Accelerator" to "Normal"
 7. Click the Green Generate VHDL Button in the bottom left of the top level of the design
 
-# Amazon Web Services S3 Bucket
+# FrOST AWS S3 Bucket
 FrOST Edge, which contains the FrOST Web App and Deployment Manager, utilize Amazon Web Service's (AWS) Simple Storage Service (S3) to store the design artifacts required to deploy and control your FrOST algorithm. The design artifacts include the the model.json, the device tree blob, the Linux Kernel Module, and the FPGA raw binary file.  All of these files are generated using the FrOST Autogen Software but can also be created manually.
   
 The S3 Bucket used by Frost Edge requires a specific folder structure to parse correctly. The `frost-projects` S3 Bucket folder structure can be found below. The first level inside of the S3 Bucket are the project directory folders. These folders divide the projects into different tabs in the FrOST Web App. For `frost-projects`, the hardware target (audioblade, audiomini, ...) is used to separate the projects. Inside the project directory folders are the project folders, which contain the various programming and driver files. In the FrOST Web App, the project folders create cards which allow the user to download and deploy the design.
