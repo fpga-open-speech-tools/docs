@@ -1,4 +1,4 @@
-# Building, Generating, and Uploading to S3
+# Installing the FrOST Autogen Software
 ## Installation Requirements
 ### MATLAB   
 1. [MATLAB](https://www.mathworks.com/downloads/) - Required  
@@ -36,17 +36,36 @@ or
         - `dos2unix docs/FrOST_Autogen_Config.sh`
 3. From the `[FrOST Repo]` Directory, run `./docs/FrOST_Autogen_Config.sh`
 
-# An Example Design: The Simple Vector Gain
-## Generating an The Simple Vector Gain Model
+## Generating an Example Design: The Simple Vector Gain Model
 1. Open MATLAB
 2. Navigate to `[FrOST Repos]\simulink_models\config`
-3. Run `pathSetup.m` - This has to be run every time MATLAB is opened.
+3. Run `pathSetup.m` - **This has to be run every time MATLAB is opened.**
 4. Open an example model, in this case, `[FrOST Repos]\simulink_models\models\simple_gain_vector\vector_gain.slx`
 5. Click the Run Simulation Button (Green Play Icon) in the toolbar 
 6. Change the dropdown left of the Run Simulation button from "Accelerator" to "Normal"
 7. Click the Green Generate VHDL Button in the bottom left of the top level of the design
 
-## AWS S3 Bucket and the CLI
+# Amazon Web Services S3 Bucket
+FrOST Edge, which contains the FrOST Web App and Deployment Manager, utilize Amazon Web Service's (AWS) Simple Storage Service (S3) to store the design artifacts required to deploy and control your FrOST algorithm. The design artifacts include the the model.json, the device tree blob, the Linux Kernel Module, and the FPGA raw binary file.  All of these files are generated using the FrOST Autogen Software but can also be created manually.
+  
+The S3 Bucket used by Frost Edge requires a specific folder structure to parse correctly. The `frost-projects` S3 Bucket folder structure can be found below. The first level inside of the S3 Bucket are the project directory folders. These folders divide the projects into different tabs in the FrOST Web App. For `frost-projects`, the hardware target (audioblade, audiomini, ...) is used to separate the projects. Inside the project directory folders are the project folders, which contain the various programming and driver files. In the FrOST Web App, the project folders create cards which allow the user to download and deploy the design.
+  
+**frost-projects**  
+    |-- audioblade  
+    |-- audiomini  
+        |-- echo  
+        |-- simple-gain  
+        |-- vector-gain  
+            |-- model.json  
+            |-- vector_gain_audio_mini.dtbo  
+            |-- vector_gain.ko  
+            |-- vector_gain_audio_mini.rbf  
+    |-- audioresearch  
+        |-- Beamer  
+        |-- dsbf  
+  
+The following steps will guide you through creating an S3 Bucket using the FrOST CloudFormation Template and uploading your first design, the Simple Vector Gain, to your S3 Bucket. 
+## Creating an S3 Bucket and the CLI
 1. Create an [Amazon Web Services](console.aws.amazon.com) Account and Log In  
     - FrOST Autogen and FrOST Edge only use features on the [AWS Free Tier](https://aws.amazon.com/free/), which is available for one year.  
     - A credit card is required to verify identity. AudioLogic is not liable for any charges or other account issues.  
@@ -56,15 +75,15 @@ or
 
 ### Optional - Creating an IAM User to upload programming file via the AWS CLI   
 The IAM User is a convenient way to automate the uploading of artifacts to S3 using the [AWS Command Line Interface](https://aws.amazon.com/cli/). It is not required to use the S3 Bucket with FrOST Edge. The following steps provide a simple starting point. This is not a complete guide on configuring an IAM user or security.  
-3. [Create an IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html)  
+4. [Create an IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html)  
     - Go to `IAM` by searching the AWS Services  
     - Under IAM Resources, click on `Users`  
     - Click `Add User`  
     - Enter a user name  
     - Under AWS Access Type, select `Programmatic Access`  
     - Configure user permissions  
-4. Install the [AWS CLI V2](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-windows.html) for Windows   
-5. In Powershell, run `aws configure`  
+5. Install the [AWS CLI V2](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-windows.html) for Windows   
+6. In Powershell, run `aws configure`  
     - AWS Access Key ID: created in step 2  
     - AWS Secret Access Key: created in step 2  
     - Default Region: us-west-2  
@@ -73,19 +92,13 @@ The IAM User is a convenient way to automate the uploading of artifacts to S3 us
 ## Uploading a Project to S3
 ### MATLAB CLI Upload
 1. If you setup an IAM User with the CLI Interface, run `s3upload(mp,"[bucket name]","audiomini/[project_name]",true)` in the MATLAB Command Window.  
-### Manual Upload
+### Manual Upload for the Simple Vector Gain
 1. Log into the [AWS Console](console.aws.amazon.com)
 2. In the AWS Console search bar, enter `S3` and select `S3` under services
-3. Click on the name of the bucket created above
-4. Either create or go into the FrOST Hardware Folder - ex. `audiomini`
-5. Create a folder for the project and enter it
-6. Either click the `Upload` Button or `Drag and Drop` the following files into the Project Folder created in Step 5  
-    - `[project_folder]\model.json`   
-    - `[project_folder]\hdlsrc\[project_name]\[project_name]_[target].dtbo`  
-    - `[project_folder]\hdlsrc\[project_name]\[project_name].ko`  
-    - `[project_folder]\hdlsrc\[project_name]\quartus\output_files\[project_name]_[target].rbf`  
-    
-**Simple Vector Gain Files**  
+3. Enter the S3 bucket created during *AWS S3 Bucket and the CLI* by click on its name.
+4. Create a project directory folder in the S3 Bucket from Step 3. `frost-projects` uses the hardware target as the project directory folder, but this naming convention is not required.
+5. Enter the folder created in Step 4 and create a folder named `simple_vector_gain`
+6. Enter the `simple_vector_gain` folder and upload the following files by clicking the `Upload` Button or by using the `Drag and Drop` functionality
     - `[FrOST Repos]\simulink_models\models\simple_gain_vector\model.json`  
     - `[FrOST Repos]\simulink_models\models\simple_gain_vector\hdlsrc\vector_gain\vector_gain_audio_mini.dtbo`  
     - `[FrOST Repos]\simulink_models\models\simple_gain_vector\hdlsrc\vector_gain\vector_gain.ko`  
