@@ -51,6 +51,7 @@ FrOST Edge, which contains the FrOST Web App and Deployment Manager, utilize Ama
 The S3 Bucket used by Frost Edge requires a specific folder structure to parse correctly. The `frost-projects` S3 Bucket folder structure can be found below. The first level inside of the S3 Bucket are the project directory folders. These folders divide the projects into different tabs in the FrOST Web App. For `frost-projects`, the hardware target (audioblade, audiomini, ...) is used to separate the projects. Inside the project directory folders are the project folders, which contain the various programming and driver files. In the FrOST Web App, the project folders create cards which allow the user to download and deploy the design.
   
 **frost-projects**  
+```
     |-- audioblade  
     |-- audiomini  
         |-- echo  
@@ -63,7 +64,7 @@ The S3 Bucket used by Frost Edge requires a specific folder structure to parse c
     |-- audioresearch  
         |-- Beamer  
         |-- dsbf  
-  
+```
 The following steps will guide you through creating an S3 Bucket using the FrOST CloudFormation Template and uploading your first design, the Simple Vector Gain, to your S3 Bucket. 
 ## Creating an S3 Bucket and the CLI
 1. Create an [Amazon Web Services](console.aws.amazon.com) Account and Log In  
