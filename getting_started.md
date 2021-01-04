@@ -45,9 +45,9 @@ or
 7. Click the Green Generate VHDL Button in the bottom left of the top level of the design
 
 # FrOST AWS S3 Bucket
-FrOST Edge, which contains the FrOST Web App and Deployment Manager, utilize Amazon Web Service's (AWS) Simple Storage Service (S3) to store the design artifacts required to deploy and control your FrOST algorithm. The design artifacts include the the model.json, the device tree blob, the Linux Kernel Module, and the FPGA raw binary file.  All of these files are generated using the FrOST Autogen Software but can also be created manually.
+FrOST Edge, which contains the FrOST Edge UI and Deployment Manager, utilize Amazon Web Service's (AWS) Simple Storage Service (S3) to store the design artifacts required to deploy and control your FrOST algorithm. The design artifacts include the model.json, the device tree blob, the Linux Kernel Module, and the FPGA raw binary file.  All of these files are generated using the FrOST Autogen Software but can also be created manually.
   
-The S3 Bucket used by Frost Edge requires a specific folder structure to parse correctly. The `frost-projects` S3 Bucket folder structure can be found below. The first level inside of the S3 Bucket are the project directory folders. These folders divide the projects into different tabs in the FrOST Web App. For `frost-projects`, the hardware target (audioblade, audiomini, ...) is used to separate the projects. Inside the project directory folders are the project folders, which contain the various programming and driver files. In the FrOST Web App, the project folders create cards which allow the user to download and deploy the design.
+The S3 Bucket used by Frost Edge requires a specific folder structure to parse correctly. The `frost-projects` S3 Bucket folder structure can be found below. The first level inside of the S3 Bucket are the project directory folders. These folders divide the projects into different tabs in the FrOST Edge UI. For `frost-projects`, the hardware target (audioblade, audiomini, ...) is used to separate the projects. Inside the project directory folders are the project folders, which contain the various programming and driver files. In the FrOST Edge UI, the project folders create cards which allow the user to download and deploy the design.
   
 **frost-projects**  
 ```
@@ -135,14 +135,14 @@ The IAM User is a convenient way to automate the uploading of artifacts to S3 us
 9. In the Putty Terminal, run `ifconfig`
     - Note the IP Address, it will be used in the next section
 
-## Check the Status of the FrOST Web App and Deployment Manager
+## Check the Status of the FrOST Edge UI and Deployment Manager
 The following command can be run from Putty, however it is recommended to SSH into the Audio Mini using WSL.
   
 1. Launch a WSL Terminal
 2. SSH into the Audio Mini by running `ssh root@[ip address]`
     - password: root
 3. Check the status of the FrOST Deployment Manager by running `systemctl status frost_edge_dm.service`
-4. Check the status of the FrOST Web App by running `systemctl status frost_edge_web_app.service`
+4. Check the status of the FrOST Edge UI by running `systemctl status frost_edge_web_app.service`
 
 ## Deploying Design to SoC FPGA through Web App
 1. Connect to the FrOST Hardware by navigating to `[ip address]:5000`  
