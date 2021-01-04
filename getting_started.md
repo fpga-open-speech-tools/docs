@@ -20,9 +20,10 @@ or
 ### Windows Subsystem for Linux
 1. Install [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) with Ubuntu 18.04 LTS or newer 
 
-### Python 3.8.X
-1. In windows command prompt, run `python --version`
-2. Install Python 3.8 from the Microsoft Store
+### Python 3.8+
+1. In the Windows Command Prompt, check if Python 3 is installed by running
+    - `python --version`
+2. If Python 3 is not installed, install Python 3.8+ from the Microsoft Store
 
 ## Configure the FrOST Autogen Software
 1. Create a new folder to store all of the FrOST Repos. This folder will be refered to as the `[FrOST Repos]` Directory in the rest of this guide.
