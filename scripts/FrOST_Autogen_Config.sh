@@ -4,13 +4,14 @@ echo "Updating and Installing Packages..."
 sudo apt update;
 sudo apt install gcc-arm-linux-gnueabihf -y;
 sudo apt install wsl -y;
+sudo apt install make -y;
 sudo apt install dos2unix -y;
 sudo apt install libssl-dev -y;
 
 # Install the Device Tree Compiler
 echo "Installing the Device Tree Compiler."
 sudo dos2unix docs/scripts/dtc_installer.sh
-./docs/scripts/dtc_installer.sh # This will fail to build a Python 2 package but that doesn't matter
+./docs/scripts/dtc_installer.sh 
 
 # Clone the FrOST Repos
 echo "Cloning the FrOST Git Repos."
