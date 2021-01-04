@@ -30,8 +30,7 @@ or
   i. Navigate to the newly created `[FrOST Repos]` Directory   
   ii. Clone the [Docs Repo](https://github.com/fpga-open-speech-tools/docs) into the `[FrOST Repos]` Directory. 
     - `wsl.exe git clone https://github.com/fpga-open-speech-tools/docs.git`
-3. Navigate into `[Docs]` Directory by running `cd docs`
-4. Run `install_FrOST_Autogen.bat`. Note this will take approximately 30 minutes and requires at least 2GB of free hard drive space.
+  iii. Install the FrOST Autogen Software by ruunning `wsl.exe bash "docs/scripts/FrOST_Autogen_Config.sh"`. Note this will take approximately 30 minutes and requires at least 2GB of free hard drive space.
 
 ## Generating an Example Design: The Simple Vector Gain Model
 1. Open MATLAB

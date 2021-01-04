@@ -1,1 +1,0 @@
-wsl.exe bash "scripts/FrOST_Autogen_Config.sh"
