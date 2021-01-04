@@ -11,7 +11,7 @@ sudo apt install libssl-dev -y;
 # Install the Device Tree Compiler
 echo "Installing the Device Tree Compiler."
 sudo dos2unix docs/scripts/dtc_installer.sh
-./docs/scripts/dtc_installer.sh # This will fail to build a Python 2 package but that doesn't matter
+./docs/scripts/dtc_installer.sh 
 
 # Clone the FrOST Repos
 echo "Cloning the FrOST Git Repos."
