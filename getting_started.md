@@ -26,15 +26,12 @@ or
 
 ## Configure the FrOST Autogen Software
 1. Create a new folder to store all of the FrOST Repos. This folder will be refered to as the `[FrOST Repos]` Directory in the rest of this guide.
-2. In WSL:  
+2. In the Windows Command Prompt:  
   i. Navigate to the newly created `[FrOST Repos]` Directory   
-  ii. Clone the [Docs Repo](https://github.com/fpga-open-speech-tools/docs) into the `[FrOST Repos]` Directory. Note this will take approximately 30 minutes and requires at least 2GB of free hard drive space.
-    - `git clone https://github.com/fpga-open-speech-tools/docs.git`
-    - Note: The `FrOST_Autogen_Config.sh` script will fail if the Docs repo is cloned using GitHub Desktop on Windows. GitHub Desktop converts Unix EOL characters to Dos EOL characters. Use the following steps to convert the Unix EOL Characters to Dos EOL Characters. 
-        - `sudo apt update`
-        - `sudo apt install dos2unix -y`
-        - `dos2unix docs/FrOST_Autogen_Config.sh`
-3. From the `[FrOST Repo]` Directory, run `./docs/FrOST_Autogen_Config.sh`
+  ii. Clone the [Docs Repo](https://github.com/fpga-open-speech-tools/docs) into the `[FrOST Repos]` Directory. 
+    - `wsl.exe git clone https://github.com/fpga-open-speech-tools/docs.git`
+3. Navigate into `[Docs]` Directory by running `cd docs`
+4. Run `install_FrOST_Autogen.bat`. Note this will take approximately 30 minutes and requires at least 2GB of free hard drive space.
 
 ## Generating an Example Design: The Simple Vector Gain Model
 1. Open MATLAB
