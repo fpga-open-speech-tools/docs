@@ -114,7 +114,7 @@ The IAM User is a convenient way to automate the uploading of artifacts to S3 us
 5. Launch balenaEtcher and follow the steps to write the Audio Mini Linux Image to the uSD Card 
     - Note: This takes about 20 minutes to write and validate
 
-## Power the Audio Mini and Finding the IP Address
+## Power the Audio Mini and Determine the IP Address
 1. Download and Install [Putty](https://www.putty.org/)
 2. Insert the uSD Card with the Audio Mini Linux Image into the Audio Mini
 3. Connect an Ethernet cable to the DE10-Nano board and to your local switch or router.
@@ -125,7 +125,7 @@ The IAM User is a convenient way to automate the uploading of artifacts to S3 us
     - Note the COM Number for the USB Serial Port in the List
 6. Launch Putty and Configure the Serial Port Settings for the Audio Mini
     - Under Basic Options, Select `Serial`
-    - Update the Serial Port Number - This was determined in step 4
+    - Update the Serial Port Number - This was determined in step 5
     - Set the speed to `115200`
     - Click Open
 7. Power the Audio Mini with the provided 12V DC Adapter
