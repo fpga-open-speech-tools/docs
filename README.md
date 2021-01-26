@@ -27,7 +27,7 @@ The S3 Bucket used by Frost Edge requires a specific folder structure to parse c
         |-- dsbf  
 ```
 
-## [Getting Started](getting_started\ReadMe.md)
+## [Getting Started](getting_started)
 1. Install the [FrOST Autogen Framework](getting_started/getting_started_frost_autogen.md)
 2. Create your [FrOST Edge S3 Bucket](getting_started/getting_started_frost_edge_s3.md)
 3. Configure your FrOST Hardware:
