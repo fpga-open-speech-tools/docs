@@ -13,8 +13,8 @@ echo "Installing the Device Tree Compiler."
 sudo dos2unix docs/scripts/dtc_installer.sh
 ./docs/scripts/dtc_installer.sh 
 
-# Clone the FrOST Repos
-echo "Cloning the FrOST Git Repos."
+# Clone the Frost Repos
+echo "Cloning the Frost Git Repos."
 sudo dos2unix docs/scripts/clone_Frost_Repos.sh
 ./docs/scripts/clone_Frost_Repos.sh
 

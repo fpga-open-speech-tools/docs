@@ -1,7 +1,7 @@
 # Audio Mini Configuration
 ## Updating the Linux Image
 1. Acquire a uSD Card of at least 16GB
-2. Download the [Audio Mini Linux Image](https://frost-release.s3-us-west-2.amazonaws.com/linux-images/audio-mini-image.zip) from the [FrOST Website](https://fpga-open-speech-tools.github.io/audio_mini.html)  
+2. Download the [Audio Mini Linux Image](https://frost-release.s3-us-west-2.amazonaws.com/linux-images/audio-mini-image.zip) from the [Frost Website](https://fpga-open-speech-tools.github.io/audio_mini.html)  
 3. Unzip the Linux Image  
     - Note: This takes a few minutes to complete
 4. Download and Install [balenaEtcher](https://www.balena.io/etcher/)  
@@ -29,18 +29,18 @@
 9. In the Putty Terminal, run `ifconfig`
     - Note the IP Address, it will be used in the next section
 
-## Check the Status of the FrOST Edge UI and Deployment Manager
+## Check the Status of the Frost Edge UI and Deployment Manager
 The following command can be run from Putty, however it is recommended to SSH into the Audio Mini using WSL.
   
 1. Launch a WSL Terminal
 2. SSH into the Audio Mini by running `ssh root@[ip address]`
     - password: root
-3. Check the status of the FrOST Deployment Manager by running `systemctl status frost_edge_dm.service`
-4. Check the status of the FrOST Edge UI by running `systemctl status frost_edge_web_app.service`
+3. Check the status of the Frost Deployment Manager by running `systemctl status frost_edge_dm.service`
+4. Check the status of the Frost Edge UI by running `systemctl status frost_edge_web_app.service`
 
 ## Deploying Design to SoC FPGA through Web App
-1. Connect to the FrOST Hardware by navigating to `[ip address]:5000`  
+1. Connect to the Frost Hardware by navigating to `[ip address]:5000`  
 2. Enter the bucket name that was created in Step 2 of *AWS S3 Bucket and the CLI* and click `Update`  
-3. Under device, select the correct FrOST Hardware  
+3. Under device, select the correct Frost Hardware  
 4. Under the project folder, click the download icon  
 5. Once downloaded and installed, the project controls will be available  

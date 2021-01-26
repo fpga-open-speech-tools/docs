@@ -1,8 +1,8 @@
 # Frost Getting Started Guides
-To get started using FrOST Autogen and FrOST Edge, the following users guides cover different aspects of the configuration.
-1. **[Installing FrOST Autogen](getting_started_frost_autogen.md)** - This guide walks through setting up the FrOST Framework and generating an initial example design.
-2. **[Configuring FrOST Edge S3 Bucket](getting_started_frost_edge_s3.md)** - This guide walks through the set up and configuration of an Amazon Web Services Simple Storage Service (S3) Bucket that is used to store and deploy projects using the FrOST Edge UI.
-3. **[Setting up the Audio Mini](getting_started_audio_mini.md)** - This guide walks through the process of updating on the Linux Image for the Audio Mini and verifying the functionality of FrOST Edge.
+To get started using Frost Autogen and Frost Edge, the following users guides cover different aspects of the configuration.
+1. **[Installing Frost Autogen](getting_started_frost_autogen.md)** - This guide walks through setting up the Frost Framework and generating an initial example design.
+2. **[Configuring Frost Edge S3 Bucket](getting_started_frost_edge_s3.md)** - This guide walks through the set up and configuration of an Amazon Web Services Simple Storage Service (S3) Bucket that is used to store and deploy projects using the Frost Edge UI.
+3. **[Setting up the Audio Mini](getting_started_audio_mini.md)** - This guide walks through the process of updating on the Linux Image for the Audio Mini and verifying the functionality of Frost Edge.
 ## File Structure
     |-- getting_started_audio_mini.md         # Audio Mini Getting Started Guide
     |-- getting_started_frost_autogen.md      # Frost Autogen Getting Started Guide
