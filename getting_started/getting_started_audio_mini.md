@@ -29,7 +29,7 @@
 9. In the Putty Terminal, run `ifconfig`
     - Note the IP Address, it will be used in the next section
 
-## Check the Status of the Frost Edge UI and Deployment Manager
+## Check the Status of the Frost Edge UI and the Deployment Manager
 The following command can be run from Putty, however it is recommended to SSH into the Audio Mini using WSL.
   
 1. Launch a WSL Terminal
@@ -38,7 +38,7 @@ The following command can be run from Putty, however it is recommended to SSH in
 3. Check the status of the Frost Deployment Manager by running `systemctl status frost_edge_dm.service`
 4. Check the status of the Frost Edge UI by running `systemctl status frost_edge_web_app.service`
 
-## Deploying Design to SoC FPGA through Web App
+## Deploying Your Design
 1. Connect to the Frost Hardware by navigating to `[ip address]:5000`  
 2. Enter the bucket name that was created in Step 2 of *AWS S3 Bucket and the CLI* and click `Update`  
 3. Under device, select the correct Frost Hardware  

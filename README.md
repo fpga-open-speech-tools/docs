@@ -13,18 +13,18 @@ The S3 Bucket used by Frost Edge requires a specific folder structure to parse c
   
 **frost-projects**  
 ```
-    |-- audioblade  
-    |-- audiomini  
-        |-- echo  
-        |-- simple-gain  
-        |-- vector-gain  
-            |-- model.json  
-            |-- vector_gain_audio_mini.dtbo  
-            |-- vector_gain.ko  
-            |-- vector_gain_audio_mini.rbf  
-    |-- audioresearch  
-        |-- Beamer  
-        |-- dsbf  
+    ├── audioblade  
+    ├── audiomini  
+    │   ├── echo  
+    │   ├── simple-gain  
+    │   └── vector-gain  
+    │       ├── model.json  
+    │       ├── vector_gain_audio_mini.dtbo  
+    │       ├── vector_gain.ko  
+    │       └── vector_gain_audio_mini.rbf  
+    └── audioresearch  
+        ├── Beamer  
+        └── dsbf  
 ```
 
 ## [Getting Started](getting_started)
