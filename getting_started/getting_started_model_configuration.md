@@ -37,7 +37,7 @@ The **system** node of the `model.json` file describes the target FPGA developme
 	- `numberOfChannels`: The number of channels on a single data signal.
 
 ### Device
-The device node of the `model.json` file configures the user-defined registers and controls for custom designs.  This node is composed of a list of devices as well as a list of registers for each device.  A specific example of a multi-register device is shown below and an example of a multi-device `model.json` file can be found in the [Beamer](../../../simulink_models/Beamer) example design.
+The device node of the `model.json` file configures the user-defined registers and controls for custom designs.  This node is composed of a list of devices as well as a list of registers for each device.  A specific example of a multi-register device is shown below and an example of a multi-device `model.json` file can be found in the [Beamer](https://github.com/fpga-open-speech-tools/simulink_models/tree/dev/models/Beamer) example design.
 ```
 "devices": 
 [
