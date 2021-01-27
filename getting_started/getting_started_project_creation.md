@@ -19,7 +19,7 @@
 Registers that are to be controlled must be defined in two locations; in the Simulink model and in the `model.json` file.  The `model.json` file defines the type of control and data widths for the signal while the Simulink model defines how they are connected in the FPGA fabric.
 
 1. Open the `model.json`
-2. Add the desired registers to the `registers` field of the `devices` field.  Documentation and examples can be found in [this](getting_started_model_configuration.md) document
+2. Add the desired registers to the `registers` field of the `devices` node.  Documentation and examples can be found in [this](getting_started_model_configuration.md) document
 3. For each register that must be controlled, create a `From Workspace` variable in the top level of the design.
 4. Open the `From Workspace` block
 5. In the data field for the block, add `mp.register{x}.timeseries` where `x` is the index of the register.  Note, indexing in MATLAB starts at 1.
@@ -28,6 +28,13 @@ Registers that are to be controlled must be defined in two locations; in the Sim
 8. Add a `Data Type conversion` block for each user defined register
 9. Set the output data type of the conversion blocks to `mp.register{x}.dataType` where `x` is the corresponding register
 
+## Deploying the build
+1. Change to the `simulink_models/config` directory and run `pathSetup.m`
+2. Change to the project directory
+3. Set the Simulation type to `Normal` and run the Simulink model
+4. Once the Simulation is complete, click the green `Generate VHDL` button in the top level of the Simulink model
+5. Follow the [DE10 setup guide](getting_started_audio_mini.md) to setup the Audio Mini
+6. Follow the steps in [this](getting_started_frost_edge_s3.md) guide to upload the project files to S3 and test the project
 
 ## Model Referencing
 *Coming Soon*
