@@ -73,3 +73,14 @@ The device node of the `model.json` file configures the user-defined registers a
   }
 ]
 ```
+
+- `name`: Name of the custom device
+- `registers`: A node that contains the list of registers for the custom design
+- `dataType`: A node that describes the register data type
+	- `fractionLength`: The number of fractional bits in the data word
+	- `signed`: Whether or not to treat the word as a signed or unsigned word	
+  - `type`: Human readable data type for the register.  This is currently not parsed for use in the design.
+  - `wordLength`: The length, in bits, of the register word
+- `defaultValue`: The value that is loaded into the register on boot.
+- `name`: Name of the control that is generated in the UI
+- `registerNumber`: The 
