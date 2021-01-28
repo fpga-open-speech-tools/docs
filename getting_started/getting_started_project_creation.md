@@ -30,7 +30,7 @@ Registers that are to be controlled must be defined in two locations; in the Sim
 
 ## Deploying the build
 1. Change to the `simulink_models/config` directory and run `pathSetup.m`
-2. Change to the project directory
+2. Change back to the project directory
 3. Set the Simulation type to `Normal` and run the Simulink model
 4. Once the Simulation is complete, click the green `Generate VHDL` button in the top level of the Simulink model
 5. Follow the [DE10 setup guide](getting_started_audio_mini.md) to setup the Audio Mini
