@@ -11,7 +11,7 @@
 ### Audio Processing System
 1. Double-click the Simulink model and select 'Open Model' from the MATLAB prompt
 2. Open the dataplane subsystem from the top level design
-3. Build the custom processing system from HDL synthesizable blocks.  These blocks should primarily be from the HDL coder toolbox, however a subset of other blocks from the Simulink library are synthesizable as well.  Be sure to convert to the appropriate word size at the end of the signal processing using the `Data Type Conversion` block using `fixdt(1,mp.W_bits,mp.F_bits)` as the output data type.
+3. Build the custom processing system from HDL synthesizable blocks.  These blocks should primarily be from the HDL coder toolbox, however a subset of other blocks from the Simulink library are synthesizable as well.  Be sure to convert to the appropriate word size at the end of the signal processing with the `Data Type Conversion` block using `fixdt(1,mp.W_bits,mp.F_bits)` as the output data type.
 4. Connect the relevant data signals to the Avalon sink (input) and source (output) signals
 5. Bring any user-defined signals out of the dataplane and to the top level of the project
 
