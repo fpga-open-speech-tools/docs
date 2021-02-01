@@ -83,4 +83,4 @@ The device node of the `model.json` file configures the user-defined registers a
   - `wordLength`: The length, in bits, of the register word
 - `defaultValue`: The value that is loaded into the register on boot.
 - `name`: Name of the control that is generated in the UI
-- `registerNumber`: The 
+- `registerNumber`: The number of the register.  This should start from 0.

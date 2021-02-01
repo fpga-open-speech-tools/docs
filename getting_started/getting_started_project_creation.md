@@ -1,11 +1,10 @@
-
 # Building a Custom Audio Processing System
 ## Project Creation
 1. Copy the passthrough example project to a new directory within Simulink Models folder
 2. Rename the project folder
 3. Open the renamed folder and rename the Simulink project
 4. Open the model.json file
-5. Update the device name to match the renamed Simulink project
+5. Update the device name to match the renamed Simulink project.  If this step is skipped, the project **will not** compile.
 6. Change to the `simulink_models/config` directory and run `pathSetup.m`
 7. Change back to the project directory
 8. Double-click the Simulink model and select 'Open Model' from the MATLAB prompt
@@ -25,7 +24,7 @@ Registers that are to be controlled must be defined in two locations; in the Sim
 
 1. Open the `model.json`
 2. Add the desired registers to the `registers` field of the `devices` node.  Documentation and examples can be found in [this](getting_started_model_configuration.md) document
-3. For each register that must be controlled, create a `From Workspace` variable in the top level of the design.
+3. For each register that must be controlled, create a `From Workspace` block in the top level of the design.
 4. Open the `From Workspace` block
 5. In the data field for the block, add `mp.register{x}.timeseries` where `x` is the index of the register.  Note, indexing in MATLAB starts at 1.
 6.  Set the sample time for the block by entering `mp.Ts_sim` in the `Sample time:` field.
