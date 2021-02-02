@@ -74,7 +74,7 @@ The device node of the `model.json` file configures the user-defined registers a
 ]
 ```
 
-- `name`: Name of the custom device
+- `name`: Name of the custom device.  This must match the name of the register signal in the Simulink model.
 - `registers`: A node that contains the list of registers for the custom design
 - `dataType`: A node that describes the register data type
 	- `fractionLength`: The number of fractional bits in the data word
